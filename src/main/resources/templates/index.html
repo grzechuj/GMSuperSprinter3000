@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>GM SuperSprinter3000</title>
 </head>
 <body>
 <h1>SuperSprinter3000</h1>
+<h2>User Stories:</h2>
+<table>
+    <tr>
+        <th>No.</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+    </tr>
+    <tr th:each="us, state : ${userStories}">
+        <td th:text="${state.index +1}"></td>
+        <td th:text="${us.title}"></td>
+        <td th:text="${us.description}"></td>
+        <td th:text="${us.status}"></td>
+    </tr>
+</table>
 </body>
 </html>
