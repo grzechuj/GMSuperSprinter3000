@@ -23,4 +23,9 @@ public class UserStoryController {
         model.addAttribute("userStories", userStories);
         return "index";
     }
+
+    @GetMapping("/new-user-story")
+    public String newUserStoryPage(UserStory userStory) {
+        return "add_user_story";
+    }
 }

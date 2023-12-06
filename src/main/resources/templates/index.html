@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1>SuperSprinter3000</h1>
+<a th:href="@{/new-user-story}">Add new user story</a>
 <h2>User Stories:</h2>
 <table>
     <tr>
@@ -15,7 +16,7 @@
         <th>Status</th>
     </tr>
     <tr th:each="us, state : ${userStories}">
-        <td th:text="${state.index +1}"></td>
+        <td th:text="${state.index + 1}"></td>
         <td th:text="${us.title}"></td>
         <td th:text="${us.description}"></td>
         <td th:text="${us.status}"></td>
