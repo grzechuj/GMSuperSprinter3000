@@ -19,6 +19,6 @@ public class UserStory {
 
 
     public enum Status {
-        TODO, IN_PROGRESS, REVIEW, DONE
+        TODO, IN_PROGRESS, REVIEW, DONE, DELETED
     }
 }
