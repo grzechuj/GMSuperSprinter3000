@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>GM SuperSprinter3000</title>
+    <meta charset="UTF-8">
+    <title>GM SuperSprinter3000</title>
 </head>
 <body>
 <h1>SuperSprinter3000</h1>
 <h2>Add new user story:</h2>
-<form>
-
+<form th:action="@{/new-user-story}" method="post" th:object="${userStory}">
+    <div>
+        <label>
+            Title: <input type="text" th:field="*{title}"/>
+            <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+        </label>
+    </div>
+    <div>
+        <label>
+            Description: <input type="text" th:field="*{description}"/>
+            <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+        </label>
+    </div>
+    <div>
+        <label>
+            Status:
+            <select th:field="*{status}">
+                <option th:each="userStoryStatus : ${userStoryStatuses}"
+                        th:value="${userStoryStatus}"
+                        th:text="${userStoryStatus}"></option>
+            </select>
+        </label>
+    </div>
+    <input type="submit" th:value="OK">
 </form>
 
 </body>

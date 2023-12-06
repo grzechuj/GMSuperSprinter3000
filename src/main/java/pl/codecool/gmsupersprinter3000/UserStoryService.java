@@ -22,4 +22,8 @@ public class UserStoryService {
     public List<UserStory> getAllUserStories() {
         return userStories;
     }
+
+    public void saveNewUserStory(UserStory userStory) {
+        userStories.add(userStory);
+    }
 }
